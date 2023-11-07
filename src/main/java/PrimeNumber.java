@@ -1,17 +1,14 @@
-import java.util.Scanner;
-
 public class PrimeNumber {
     public static void main(String[] args) {
+        checkNumber(11);
+    }
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите натуральное число больше единицы: ");
-
-        int number = scanner.nextInt();
-        System.out.println("Спасибо! Вы ввели число " + number);
+    public static void checkNumber(int number) {
 
         if (number > 1) {
             int i = 2;
             boolean reminder = false;
+
             while (i < number) {
                 if (number % i == 0) {
                     reminder = true;
@@ -20,13 +17,16 @@ public class PrimeNumber {
                 i++;
             }
             if (reminder) {
-                System.out.println(number + " - составное число");
+                System.out.println(number + " - составное число.");
             } else {
-                System.out.println(number + " - простое число");
+                System.out.println(number + " - простое число.");
             }
+        } else {
+            System.out.println("Вы ввели некорректные данные! Введите целое число больше единицы.");
         }
     }
 }
+
 
 
 
